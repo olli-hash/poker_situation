@@ -12,13 +12,28 @@
 
 
 
-function PGAME_SERIES () {      // for consecutive games on one table
+function PGAME_SERIES (opening_message, nextbreak_function) {      // for consecutive games on one table
                                 // tournament context; multi-game ; multi-table?
 
     this.games = []
     this.created = new Date()
     this.tags = ["experimental"]
     this.open = true            // when false no more entries are accepted
+
+    this.tournament_mode = "sitandgo"
+
+
+    this.closing_message = ""
+    this.opening_message = opening_message
+
+    this.spectators = []
+
+
+
+    this.players = []
+
+    this.nextbreak = 0
+    this.nextbreak_function = nextbreak_function
 
 
 }
