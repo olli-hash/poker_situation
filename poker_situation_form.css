@@ -1,0 +1,224 @@
+
+body {
+    background-color: #eee;
+}
+
+.pokerform {            /* 1. Level */
+    border: 2px solid black;
+    margin: 100px;
+    width: 1100px;
+}
+
+.pokerform input[type=date] {
+    width: auto;
+}
+
+.pokerform input[name=position], .pokerform input[name=number_of_players] {
+    width: 30px;
+}
+
+label {
+    display: inline-block;
+}
+
+.pokerform label[for=position] {
+    width: auto;
+}
+
+.pokerform label.short {
+    width: 40px;
+    text-align: right;
+}
+
+/* ------ ------ ------ ------ .poker_situation ------ ------ ------ ------ ------   */
+
+.poker_situation {      /* 2. Level */
+
+}
+
+#container_moves {
+    float:right;
+    border: 3px solid #2196F3;
+    width: 45%;
+}
+
+table#table_of_moves {
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin: 6px;
+    background-color: white;
+}
+
+table#table_of_moves th, table#table_of_moves td {
+    border: 1px solid black;
+}
+
+table#table_of_moves tbody tr:hover {
+    background-color: #87CEEB;
+}
+
+.pokerform table#table_of_situation {
+    table-layout: fixed;
+    /* border-collapse: separate;
+    border-spacing: 6px; */
+    border-collapse: collapse;
+    border: 0px;
+    margin-left: 10px;
+    float:left;
+}
+
+.pokerform table#table_of_situation th {
+    font-weight: normal;
+    text-align: center;
+}
+
+.pokerform table#table_of_situation td, .pokerform table#table_of_situation th {
+    width: 110px;
+    padding: 3px;
+    border: 0px solid #7a7a7a;
+
+}
+
+table#table_of_situation tr td:nth-child(1) {
+    width: 150px;
+    border: 0px;
+}
+
+.poker_situation input[type="radio"] {
+    width: auto;
+}
+
+.next_situation {
+    clear: both;
+    text-align: center;
+}
+
+.poker_situation input, .pokerform input, .pokerform select {
+    display: inline-block;
+    margin: 3px;
+    width: 110px;
+}
+
+.poker_situation table input {
+    width: 100%;
+    margin: 8px;
+}
+
+.poker_situation input:hover {
+    box-shadow: 0px 0px 5px 5px black;
+}
+
+.poker_situation label {
+    width: 150px;
+}
+
+.bottom_half label {
+    width: 110px;
+}
+
+.cards {                /* 3. Level */
+    float:right;
+    width: 33%;
+    height: 100%;
+    padding: 30px 50px 50px 50px ;
+}
+
+.poker_situation .cards input {         /* 4. Level */
+    font-family: monospace;
+    font-size: 170%;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    width: 45px;
+    margin: 1px 0px 1px 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+.poker_situation .cards input[name=phase] {
+    background-color:inherit;
+    border: 0px;
+    text-align: center;
+    font-size: 120%;
+    font-weight: 900;
+    width: 80px;
+}
+
+.poker_situation .cards .phase {
+    text-align: right;
+}
+
+.Name_and_Position {    /* 3. Level */
+    margin-bottom: 4px;
+    /* border: 5px solid red; */
+}
+
+/* ------ ------ ------ ------ .player_action ------ ------ ------ ------ ------   */
+
+
+.player_action {        /* 2. Level */
+    clear: both;
+    width: 100%;
+    display: flex;
+}
+
+.player_action .flex_item {
+    flex-grow: 1;
+    padding: 2px;
+    position: relative;
+}
+
+.player_action input {
+    width: 100%;
+    background-color: red;
+    color: white;
+    font-size: 300%;
+    padding: 12px;
+    margin:2px;
+    border:0px solid white;
+    box-shadow: 0px;
+}
+
+.player_action input:hover {
+    box-shadow: 0px 0px 5px 3px black;
+}
+
+/* ------ ------ ------ ------ .bottom_half ------ ------ ------ ------ ------   */
+
+.bottom_half {          /* 2. Level */
+    padding: 3px 20px;
+    color: #555;
+}
+
+.bottom_half * {
+    color: #555;
+}
+
+.bottom_half .options fieldset {
+    float: left;
+    width: 50%;
+}
+
+.bottom_half .meta fieldset {
+    clear:both;
+}
+
+.bottom_half .options fieldset .fieldset_content {
+    columns: initial;
+}
+
+.fieldset_content {     /* 5. Level */
+    padding: 10px 40px;
+    columns: 300px 3;
+}
+
+.fieldset_content span {
+    white-space: nowrap;
+}
+
+.fieldset_content .flex_item_child {
+    padding: 2px;
+    position: relative;
+}
