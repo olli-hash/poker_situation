@@ -35,6 +35,13 @@
 
 <script>
 
+    $( window ).unload(function() {
+        return "bye!"
+    })
+
+    $( window ).scroll(function(){
+        console.log(".")                // +
+    })
 
 </script>
 
@@ -44,6 +51,8 @@
     <div class="chart-container position_relative">
         <canvas id="myChart" ></canvas>
     </div>
+
+<a href="https://www.google.com/">LINK</a>
 
 
     <form class="form_of_questions_and_statements position_relative" action="#">
@@ -55,9 +64,13 @@
             <br>
             <br>
 
-            <input type="text" name="poker_handranks" value="9">
-            <input type="button" name="b2" value="go">
+            <select id="size_barchart" name="size_barchart">
+                <option value="l">groß</option>
+                <option value="m">mittel</option>
+                <option value="s" selected>klein</option>
+            </select>
             <br>
+
 
             <select name="subjective_pokerstrength_steps">
                 <option value="0">müll (0)</option>

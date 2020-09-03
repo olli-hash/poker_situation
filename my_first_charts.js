@@ -5,10 +5,23 @@ $( document ).ready(function()  {
 
 Chart.defaults.global.animation.duration = 700
 Chart.defaults.global.title.fontSize = 33
-
 Chart.defaults.global.title.display = false
-
 console.log(Chart.defaults.global.animation.duration + "---" + Chart.defaults.global.title.display)
+
+
+
+$('#size_barchart').change( function () {
+    alert("hi")
+})
+
+
+
+
+
+
+
+
+
 
 var c1 = new MY_BARCHART("Poker: Bets")
 

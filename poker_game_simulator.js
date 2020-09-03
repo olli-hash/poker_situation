@@ -1,3 +1,5 @@
+// IDEA:    training game mode:   always bet with "1 pot" at least ...
+
 
 /*
 1. create players
@@ -7,7 +9,37 @@
 */
 
 
-// training game mode:   always bet with "1 pot" at least ...
+
+
+
+
+PLAYER.prototype.decide = function () {
+
+
+
+
+}
+
+
+function PLAYER(name) {
+    this.name = name
+    this.color = getcolor()
+    this.personality = {}
+
+    function getcolor () {
+
+        if (    Math.random() < 0.5      )
+
+        if (    Math.random() <= (1 / 3)    )
+
+
+
+
+        return "rgb( 200, 44, 222 )"
+        function getbright () {}
+    }
+}
+
 
 
 
@@ -26,7 +58,7 @@ function PGAME_SERIES (opening_message, nextbreak_function) {      // for consec
     this.closing_message = ""
     this.opening_message = opening_message
 
-    this.spectators = []
+    this.spectators = []        // mailing them?
 
 
 
