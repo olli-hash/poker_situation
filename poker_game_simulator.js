@@ -12,8 +12,11 @@
 
 
 
+//conditions:    .tocall    .minraise   .potodds
 
-PLAYER.prototype.decide = function (message, conditions) {
+//game:    .gametable
+
+PLAYER.prototype.decide = function (message, conditions, callback) {
 
     this.log.push(message)
     this.state = "thinking"
@@ -22,17 +25,19 @@ PLAYER.prototype.decide = function (message, conditions) {
     if (conditions.minraise <= (conditions.BB * 3)) var raise_is_cheap = true
     if (conditions.potodds >= 3) var potodds_is_nice = true
 
-    
+
 
 
     var move = "call"
     var amount = conditions.tocall
     this.state = "moved"
-    return {
+
+    // ?
+    callback ({
         move : move + " " + amount,
         invested_percent : amount / this.game.stack
 
-    }
+    })
 }
 
 
@@ -43,9 +48,9 @@ function PLAYER(name, game) {
 
     this.game = game
 
-    this.state = "object created"
+    this.state = "object created; in game"
 
-    this.log = []
+    this.log = [this.state]
 
     function getcolor () {
 
@@ -88,7 +93,22 @@ function PGAME_SERIES (opening_message, nextbreak_function) {      // for consec
     this.nextbreak = 0
     this.nextbreak_function = nextbreak_function
 
+}
 
+function TOURNAMENT (name, players) {
+    this.name = name
+    this.state = "object created; wait for start"
+    this.tags = [ "dummy", "save_tournament"]
+    this.created = new Date()
+    this.max_players = 45
+    this.allow_newplayers = true
+    this.allow_rebuys = 0
+    this.players = players
+    this.money_is_real = false
+    this.buyin_is_real = true
+    this.buyin = 100
+    this.start_stack = 5000
+    this.currency_display = "€"
 }
 
 
