@@ -1,36 +1,57 @@
 // IDEA:    training game mode:   always bet with "1 pot" at least ...
 
+//  EXCERCISE:    send system messages from object to object
+
 
 /*
 1. create players
 2. create table and set players & stacks
-2a. create game events list
+2a. create 'gametable'
 3. give cards (create cards) and start interviewing
 */
 
 
 
 
+PLAYER.prototype.decide = function (message, conditions) {
+
+    this.log.push(message)
+    this.state = "thinking"
+
+    if (conditions.tocall < (this.game.stack * 0.09)) var call_is_cheap = true
+    if (conditions.minraise <= (conditions.BB * 3)) var raise_is_cheap = true
+    if (conditions.potodds >= 3) var potodds_is_nice = true
+
+    
 
 
-PLAYER.prototype.decide = function () {
+    var move = "call"
+    var amount = conditions.tocall
+    this.state = "moved"
+    return {
+        move : move + " " + amount,
+        invested_percent : amount / this.game.stack
 
-
-
-
+    }
 }
 
 
-function PLAYER(name) {
+function PLAYER(name, game) {
     this.name = name
     this.color = getcolor()
     this.personality = {}
 
+    this.game = game
+
+    this.state = "object created"
+
+    this.log = []
+
     function getcolor () {
 
-        if (    Math.random() < 0.5      )
+        if (    Math.random() < 0.5      ) {}
 
-        if (    Math.random() <= (1 / 3)    )
+        if (    Math.random() <= (1 / 3)    )  {}
 
 
 
