@@ -1,0 +1,15 @@
+
+
+
+table.gametable {
+    width: 80%;
+    border-collapse: collapse;
+    border: 3px solid black;
+    margin: 22px;
+    background-color: white;
+}
+
+td, th {
+    padding: 5px;
+    border: 1px solid black;
+}
